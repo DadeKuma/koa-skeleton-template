@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "esModuleInterop": true,
+        "strict": true,
+        "sourceMap": true,
+        "target": "es6",
+        "module": "ESNext",
+        "moduleResolution": "nodenext",
+        "outDir": "dist"
+    },
+    "include": [
+        "**/*.ts",
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "ts-node": {
+        "esm": true,
+    }
+}
