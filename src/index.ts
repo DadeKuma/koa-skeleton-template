@@ -1,8 +1,23 @@
 import Koa from 'koa';
-const app = new Koa();
+import Router from 'koa-router';
 
-app.use(async ctx => {
-    ctx.body = 'Hello Bro';
+const app = new Koa();
+const router = new Router();
+
+router.get("/", async (ctx, next) => {
+    ctx.body = "Koa Skeleton Template";
+    await next();
 });
 
-app.listen(3000);
+router.get("/hello", async (ctx, next) => {
+    ctx.body = {
+        status: 'success',
+        json: { msg: "Hello World" }
+    };
+    await next();
+});
+
+app.use(router.routes());
+app.listen(3005, () => {
+    console.log("Server is ready.");
+});
